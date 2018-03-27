@@ -87,6 +87,12 @@ draggable | boolean | true | Enables desktop dragging
 easing | string |  'linear' | animate() fallback easing
 edgeFriction | integer | 0.15 | Resistance when swiping edges of non-infinite carousels
 fade | boolean | false | Enables fade
+arrows | boolean | true | Enable Next/Prev arrows
+appendArrows | string | $(element) | Change where the navigation arrows are attached (Selector, htmlString, Array, Element, jQuery object)
+appendDots | string | $(element) | Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object)
+mobileFirst | boolean | false | Responsive settings use mobile first calculation
+prevArrow | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<button type="button" class="slick-prev">Previous</button>` | Allows you to select a node or customize the HTML for the "Previous" arrow.
+nextArrow | string (html \| jQuery selector) \| object (DOM node \| jQuery object) | `<button type="button" class="slick-next">Next</button>` | Allows you to select a node or customize the HTML for the "Next" arrow.
 focusOnSelect | boolean | false | Enable focus on selected element (click)
 focusOnChange | boolean | false | Puts focus on slide after change
 infinite | boolean | true | Infinite looping

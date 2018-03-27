@@ -2556,7 +2556,25 @@
 
         _.animating = true;
 
-        _.$slider.trigger('beforeChange', [_, _.currentSlide, animSlide]);
+        var beforeChangeEvent = jQuery.Event('beforeChange');
+        _.$slider.trigger(beforeChangeEvent, [_, _.currentSlide, animSlide]);
+
+        if (beforeChangeEvent.isDefaultPrevented()) {
+            _.animating = false;
+            if (dontAnimate !== true) {
+                _.animateSlide(slideLeft, function() {
+                    _.postSlide(_.currentSlide);
+                });
+            } else {
+                _.postSlide(_.currentSlide);
+            }
+
+            return;
+        }
+
+        if (sync === false) {
+            _.asNavFor(index);
+        }
 
         oldSlide = _.currentSlide;
         _.currentSlide = animSlide;
